@@ -1,0 +1,76 @@
+version: '3.8'
+
+# PRODUCTION DOCKER COMPOSE CONFIGURATION
+# This configuration is optimized for security - backend ports are NOT exposed to the host
+
+services:
+  # Backend AI Tutor Service (INTERNAL ONLY - NOT EXPOSED)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    # NO PORTS EXPOSED - only accessible via internal network
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
+      - LANGSMITH_PROJECT=${LANGSMITH_PROJECT:-imtehaan-ai-tutor}
+      - LANGSMITH_TRACING=${LANGSMITH_TRACING:-true}
+      - LANGSMITH_ENDPOINT=${LANGSMITH_ENDPOINT:-https://api.smith.langchain.com}
+      - HOST=0.0.0.0
+      - PORT=8000
+      - ALLOWED_ORIGINS=${FRONTEND_URL:-https://yourdomain.com}
+      - ALLOW_CREDENTIALS=true
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - ENABLE_DEBUG=${ENABLE_DEBUG:-false}
+    volumes:
+      - ./logs:/app/logs
+      - ./backend-build:/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - imtehaan-network
+    # Security: Run as non-root user
+    user: "1000:1000"
+
+  # Frontend React App (ONLY PORT 80 EXPOSED)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+        - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+        - VITE_API_BASE_URL=/api
+    ports:
+      - "80:80"
+      # For HTTPS (if you have SSL certificates):
+      # - "443:443"
+    environment:
+      - NGINX_HOST=${DOMAIN_NAME:-localhost}
+      - NGINX_PORT=80
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - imtehaan-network
+    # Security: Read-only root filesystem (except for nginx cache)
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+
+networks:
+  imtehaan-network:
+    driver: bridge
+    # Internal network - isolated from external access
+    internal: false  # Set to true for complete isolation
+
+# NOTE: Supabase should be used as a hosted service (supabase.com)
+# If you need local database for development, use docker-compose.dev.yml
+

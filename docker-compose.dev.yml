@@ -1,0 +1,78 @@
+version: '3.8'
+
+# DEVELOPMENT DOCKER COMPOSE CONFIGURATION
+# This configuration exposes ports for development and debugging
+
+services:
+  # Backend AI Tutor Service (EXPOSED FOR DEVELOPMENT)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"  # Exposed for development
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
+      - LANGSMITH_PROJECT=${LANGSMITH_PROJECT:-imtehaan-ai-tutor}
+      - LANGSMITH_TRACING=${LANGSMITH_TRACING:-true}
+      - LANGSMITH_ENDPOINT=${LANGSMITH_ENDPOINT:-https://api.smith.langchain.com}
+      - HOST=0.0.0.0
+      - PORT=8000
+      - ALLOWED_ORIGINS=*
+      - ALLOW_CREDENTIALS=true
+      - LOG_LEVEL=DEBUG
+      - ENABLE_DEBUG=true
+    volumes:
+      - ./logs:/app/logs
+      - ./backend-build:/app
+      - .:/app  # Live reload for development
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - imtehaan-network
+
+  # Frontend React App (DEVELOPMENT)
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "5173:80"  # Development port
+    environment:
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+      - VITE_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - imtehaan-network
+
+  # Local Supabase (OPTIONAL - for offline development)
+  supabase:
+    image: supabase/postgres:15.1.0.117
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-dev-password}
+      POSTGRES_DB: postgres
+    volumes:
+      - supabase_data_dev:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - imtehaan-network
+    profiles:
+      - local-db
+
+networks:
+  imtehaan-network:
+    driver: bridge
+
+volumes:
+  supabase_data_dev:
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Chat History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #9B4DFF, #FF4D91);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        button {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            display: none;
+        }
+        .result.show {
+            display: block;
+        }
+        .success {
+            color: #4ade80;
+        }
+        .info {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Clear Chat History</h1>
+        <p>This will clear all AI Tutor chat histories stored in your browser's localStorage for all topics.</p>
+        
+        <div class="info">
+            <strong>What will be cleared:</strong>
+            <ul>
+                <li>All chat histories for all topics</li>
+                <li>Chat messages and conversations</li>
+                <li>All stored chat data</li>
+            </ul>
+        </div>
+
+        <button onclick="clearAllChatHistory()">Clear All Chat Histories</button>
+        <button onclick="checkChatHistory()">Check Current Histories</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function getAllChatHistoryKeys() {
+            const keys = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && (key.startsWith('ai_tutor_chat_history') || key === 'ai_tutor_chat_history')) {
+                    keys.push(key);
+                }
+            }
+            return keys;
+        }
+
+        function clearAllChatHistory() {
+            const keys = getAllChatHistoryKeys();
+            let clearedCount = 0;
+
+            keys.forEach(key => {
+                localStorage.removeItem(key);
+                clearedCount++;
+            });
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = 'result show success';
+            resultDiv.innerHTML = `
+                <h3>✅ Success!</h3>
+                <p>Cleared <strong>${clearedCount}</strong> chat history entries:</p>
+                <ul>
+                    ${keys.map(key => `<li>${key}</li>`).join('')}
+                </ul>
+                <p><strong>All chat histories have been cleared!</strong></p>
+                <p>You can now start fresh with new conversations.</p>
+            `;
+        }
+
+        function checkChatHistory() {
+            const keys = getAllChatHistoryKeys();
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = 'result show';
+
+            if (keys.length === 0) {
+                resultDiv.innerHTML = `
+                    <h3>📋 Current Status</h3>
+                    <p>No chat histories found. localStorage is clean!</p>
+                `;
+            } else {
+                let totalChats = 0;
+                const details = keys.map(key => {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key) || '[]');
+                        const chatCount = Array.isArray(data) ? data.length : 0;
+                        totalChats += chatCount;
+                        return { key, count: chatCount };
+                    } catch (e) {
+                        return { key, count: 0 };
+                    }
+                });
+
+                resultDiv.innerHTML = `
+                    <h3>📋 Current Chat Histories</h3>
+                    <p>Found <strong>${keys.length}</strong> history storage keys with <strong>${totalChats}</strong> total chats:</p>
+                    <ul>
+                        ${details.map(d => `<li><strong>${d.key}</strong>: ${d.count} chats</li>`).join('')}
+                    </ul>
+                `;
+            }
+        }
+
+        // Check on page load
+        window.onload = function() {
+            checkChatHistory();
+        };
+    </script>
+</body>
+</html>
+
