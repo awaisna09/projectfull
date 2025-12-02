@@ -178,7 +178,7 @@ Wait for automatic deployment (~60 seconds)
 1. Railway Dashboard → Variables tab
 2. Find: OPENAI_API_KEY
 3. Edit: Click the value
-4. Paste: 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
+4. Paste: YOUR_OPENAI_API_KEY_HERE
 5. Save: Press Enter
 6. Wait: Railway auto-redeploys again (~60 seconds)
 ```

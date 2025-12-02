@@ -50,7 +50,7 @@ If it shows old commit:
 
 **Should be:**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **If it's different:**
@@ -85,7 +85,7 @@ Organization ID: _______
 **Find the key you just created:**
 ```
 Name: Imtehaan-Railway-Nov2025
-Key: sk-proj-p-IJ1X103gif... (shows first/last chars)
+Key: YOUR_OPENAI_API_KEY_HERE (shows first/last chars)
 Status: Active ✅
 ```
 
@@ -103,11 +103,11 @@ Organization: Should match your current organization
 **Scenario:**
 ```
 Account A (Free trial, expired): $0 credits
-  ├─ Old Key: sk-proj-_c3t9k4p... ❌
+  ├─ Old Key: YOUR_OLD_API_KEY_HERE ❌
   └─ Railway is using this! ❌
 
 Account B (Paid, $6.65 credits): $6.65 ✅
-  ├─ New Key: sk-proj-p-IJ1X103gif... ✅
+  ├─ New Key: YOUR_OPENAI_API_KEY_HERE ✅
   └─ You're viewing this dashboard! ✅
 ```
 
@@ -141,7 +141,7 @@ Organization Account: $0 credits ❌
 **Scenario:**
 ```
 Railway Variables:
-  OPENAI_API_KEY = sk-proj-_c3t9k4p... ❌ (OLD)
+  OPENAI_API_KEY = YOUR_OLD_API_KEY_HERE ❌ (OLD)
 
 You think you updated it, but:
   - Update didn't save
@@ -168,7 +168,7 @@ You think you updated it, but:
 3. Click to reveal value
 4. Compare EXACTLY with:
    ```
-   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
+   YOUR_OPENAI_API_KEY_HERE
    ```
 
 **If even ONE character is different:**
@@ -248,7 +248,7 @@ No retries ✅ (retry fix worked!)
 ```
 1. Railway → Variables
 2. OPENAI_API_KEY → Click to view
-3. Check if it starts with: sk-proj-p-IJ1X103gif...
+3. Check if it matches: YOUR_OPENAI_API_KEY_HERE
 4. If NO → You need to update it!
 5. If YES → Check if it's EXACTLY the same (all 105 chars)
 ```
@@ -260,7 +260,7 @@ No retries ✅ (retry fix worked!)
 ### **1. Double-Check Railway:**
 ```
 ✅ Railway Variables → OPENAI_API_KEY
-✅ Value matches: sk-proj-p-IJ1X103gif...N9OsA
+✅ Value matches: YOUR_OPENAI_API_KEY_HERE
 ✅ Saved and redeployed
 ```
 

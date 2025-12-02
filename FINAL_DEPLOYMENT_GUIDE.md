@@ -60,14 +60,14 @@ Left sidebar: Click "Variables"
 **1.4 - Find OPENAI_API_KEY:**
 ```
 Scroll to find: OPENAI_API_KEY
-Current value: sk-proj-_c3t9k4p... (OLD - has no credits)
+Current value: YOUR_OLD_API_KEY_HERE (OLD - has no credits)
 ```
 
 **1.5 - Update the Value:**
 ```
 Click: The value field to edit
 Delete: Everything
-Paste: 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
+Paste: YOUR_OPENAI_API_KEY_HERE
 ```
 
 **1.6 - Save:**
@@ -399,7 +399,7 @@ Save and wait 60 seconds
 ```
 ✅ Go to: railway.app/dashboard
 ✅ Variables → OPENAI_API_KEY
-✅ Paste: sk-proj-p-IJ1X103gif...N9OsA
+✅ Paste: YOUR_OPENAI_API_KEY_HERE
 ✅ Save and wait 60 seconds
 ```
 
@@ -472,7 +472,7 @@ I'll help you test everything
 
 **Your new API key:**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Has $6.65 in credits** - enough for hundreds of requests!

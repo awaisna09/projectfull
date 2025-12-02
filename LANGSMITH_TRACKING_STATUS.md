@@ -26,7 +26,7 @@
 ```bash
 LANGSMITH_TRACING="true"
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
-LANGSMITH_API_KEY="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"
+LANGSMITH_API_KEY="YOUR_LANGSMITH_API_KEY_HERE"
 LANGSMITH_PROJECT="imtehaan-ai-tutor"
 ```
 
@@ -78,7 +78,7 @@ else:
 **Look for these:**
 ```
 LANGSMITH_TRACING = true
-LANGSMITH_API_KEY = lsv2_pt_...
+LANGSMITH_API_KEY = YOUR_LANGSMITH_API_KEY_HERE
 LANGSMITH_PROJECT = imtehaan-ai-tutor
 LANGSMITH_ENDPOINT = https://api.smith.langchain.com
 ```
@@ -133,7 +133,7 @@ LANGSMITH_ENDPOINT = https://api.smith.langchain.com
 **Add to Railway Variables:**
 ```
 LANGSMITH_TRACING = true
-LANGSMITH_API_KEY = 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
+LANGSMITH_API_KEY = YOUR_LANGSMITH_API_KEY_HERE
 LANGSMITH_PROJECT = imtehaan-ai-tutor
 LANGSMITH_ENDPOINT = https://api.smith.langchain.com
 ```
@@ -174,7 +174,7 @@ Don't add LANGSMITH_* variables
 ### **Local config.env:**
 ```
 ✅ LANGSMITH_TRACING = "true"
-✅ LANGSMITH_API_KEY = "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"
+✅ LANGSMITH_API_KEY = "YOUR_LANGSMITH_API_KEY_HERE"
 ✅ LANGSMITH_PROJECT = "imtehaan-ai-tutor"
 ```
 
@@ -194,7 +194,7 @@ Don't add LANGSMITH_* variables
 
 **Only add to Railway:**
 ```
-OPENAI_API_KEY = sk-proj-p-IJ1X103gif...N9OsA  ← CRITICAL!
+OPENAI_API_KEY = YOUR_OPENAI_API_KEY_HERE  ← CRITICAL!
 ALLOWED_ORIGINS = https://imtehaan.netlify.app
 HOST = 0.0.0.0
 PORT = 8000
@@ -204,7 +204,7 @@ ENVIRONMENT = production
 **LangSmith variables (OPTIONAL - add later):**
 ```
 LANGSMITH_TRACING = true
-LANGSMITH_API_KEY = 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
+LANGSMITH_API_KEY = YOUR_LANGSMITH_API_KEY_HERE
 LANGSMITH_PROJECT = imtehaan-ai-tutor
 LANGSMITH_ENDPOINT = https://api.smith.langchain.com
 ```

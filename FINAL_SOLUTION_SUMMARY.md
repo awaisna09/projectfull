@@ -41,7 +41,7 @@
 
 **Copy this for Railway:**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Key Details:**
@@ -66,7 +66,7 @@ sk-proj-FpSbLAcWMxdKaeNNYlaKUjv6iC1Mmmf25m9COPRrWQ9gUiyKNHY64wsjFCazFq4Jln09ysTW
 4. Click: The value to edit
 5. Ctrl+A: Select all
 6. Delete: Remove old key
-7. Paste: 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
+7. Paste: YOUR_OPENAI_API_KEY_HERE
 8. Press: Enter (important!)
 9. Watch: "Deploying..." appears at top
 10. Wait: Full 60 seconds
@@ -233,7 +233,7 @@ Result:        ✅ EVERYTHING WORKS!
 
 **Railway:** https://railway.app/dashboard  
 **Update:** OPENAI_API_KEY  
-**New key:** `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`
+**New key:** `YOUR_OPENAI_API_KEY_HERE`
 
 **After Railway → Netlify → Test → Your platform is LIVE!** 🎉
 

@@ -502,7 +502,7 @@ Total: ~$25-75/month
 Copy these into Railway Dashboard → Variables:
 
 ```bash
-OPENAI_API_KEY=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
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
 ALLOWED_ORIGINS=https://your-site.netlify.app
 HOST=0.0.0.0
 PORT=8000
@@ -524,7 +524,7 @@ Set in Netlify Dashboard → Site settings → Environment variables:
 
 ```bash
 VITE_SUPABASE_URL=https://bgenvwieabtxwzapgeee.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnZW52d2llYWJ0eHd6YXBnZWVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM2NjUzOTUsImV4cCI6MjA2OTI0MTM5NX0.jAkplpFSAAKqEMtFSZBFgluF_Obe6_upZA9W8uPtUIE
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY_HERE
 VITE_API_BASE_URL=/api
 ```
 

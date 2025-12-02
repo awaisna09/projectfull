@@ -206,7 +206,7 @@ Status:
 2. imtehaanai project
 3. Variables tab
 4. OPENAI_API_KEY → Edit
-5. Paste: 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
+5. Paste: YOUR_OPENAI_API_KEY_HERE
 6. Save
 7. Wait 60 seconds
 ```

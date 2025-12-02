@@ -11,7 +11,7 @@
 
 **New API Key Embedded:**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Files Updated:**
@@ -176,7 +176,7 @@ Error: 429 - Quota Exceeded
 
 ### **config.env**
 ```env
-OPENAI_API_KEY=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
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
 TUTOR_MODEL="gpt-5-nano-2025-08-07"
 GRADING_MODEL="gpt-5-nano-2025-08-07"
 ```

@@ -141,7 +141,7 @@ git push -u origin master
 **Quick reference (full list in ENV_VARIABLES.md):**
 
 ```bash
-OPENAI_API_KEY=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
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
 ALLOWED_ORIGINS=*
 HOST=0.0.0.0
 PORT=8000

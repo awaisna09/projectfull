@@ -181,7 +181,7 @@ Your site is live at: https://random-name-123.netlify.app
 **Add these:**
 ```
 VITE_SUPABASE_URL = https://bgenvwieabtxwzapgeee.supabase.co
-VITE_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnZW52d2llYWJ0eHd6YXBnZWVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM2NjUzOTUsImV4cCI6MjA2OTI0MTM5NX0.jAkplpFSAAKqEMtFSZBFgluF_Obe6_upZA9W8uPtUIE
+VITE_SUPABASE_ANON_KEY = YOUR_SUPABASE_ANON_KEY_HERE
 VITE_API_BASE_URL = /api
 ```
 

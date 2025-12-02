@@ -1,6 +1,6 @@
 # ✅ API KEY UPDATE COMPLETE - ALL FILES CHECKED
 
-**New API Key:** `sk-proj-p-IJ1X103gif...N9OsA`  
+**New API Key:** `YOUR_OPENAI_API_KEY_HERE`  
 **Date:** November 3, 2025  
 **Status:** 🟢 **LOCAL FILES UPDATED**
 
@@ -38,10 +38,10 @@ Railway has its **own environment variables** that you must update manually in t
 **Current status:**
 ```
 Railway Variables:
-  OPENAI_API_KEY = sk-proj-_c3t9k4p... ❌ (OLD KEY - no credits)
+  OPENAI_API_KEY = YOUR_OLD_API_KEY_HERE ❌ (OLD KEY - no credits)
 
 Must update to:
-  OPENAI_API_KEY = sk-proj-p-IJ1X103gif... ✅ (NEW KEY - $6.65 credits)
+  OPENAI_API_KEY = YOUR_OPENAI_API_KEY_HERE ✅ (NEW KEY - $6.65 credits)
 ```
 
 ---
@@ -59,7 +59,7 @@ Must update to:
 3. Find: OPENAI_API_KEY
 4. Click: The value to edit
 5. Delete: Old key completely
-6. Paste: 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
+6. Paste: YOUR_OPENAI_API_KEY_HERE
 7. Press: Enter
 8. Wait: 60 seconds (watch for "Active" status)
 ```
@@ -231,7 +231,7 @@ Network error
 
 **Copy this key:**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Update in Railway:**
@@ -274,7 +274,7 @@ D:\Imtehaan AI EdTech Platform (1)\netlify-deployment\
 
 **Your new API key (copy for Railway):**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Railway URL:**

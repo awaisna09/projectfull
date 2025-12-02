@@ -52,7 +52,7 @@
 
 ### **API Key:** ✅ Embedded
 ```
-sk-proj-OTHpCAQjxLflbw3Wjwtz...6t4mTlBuXMtQq3o0dCj76FRfC1wA
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 ### **Model:** ✅ Updated

@@ -60,7 +60,7 @@ Click **"+ New Variable"** and add each:
 
 ```bash
 # CRITICAL - Your actual OpenAI key
-OPENAI_API_KEY=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
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
 
 # CORS - initially allow all, update after Netlify
 ALLOWED_ORIGINS=*
@@ -88,7 +88,7 @@ MAX_CONCURRENT_REQUESTS=10
 **Optional (LangSmith monitoring):**
 ```bash
 LANGSMITH_TRACING=true
-LANGSMITH_API_KEY=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
+LANGSMITH_API_KEY=YOUR_LANGSMITH_API_KEY_HERE
 LANGSMITH_PROJECT=imtehaan-ai-tutor
 ```
 
@@ -172,7 +172,7 @@ to = "https://imtehaanai-production.up.railway.app/:splat"
 5. **Set Environment Variables** in Netlify:
    ```
    VITE_SUPABASE_URL=https://bgenvwieabtxwzapgeee.supabase.co
-   VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+   VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY_HERE
    VITE_API_BASE_URL=/api
    ```
 

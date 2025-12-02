@@ -1,6 +1,6 @@
 # ✅ LATEST API KEY UPDATE - NOVEMBER 3, 2025
 
-**Latest Key:** `sk-proj-FpSbLAcWMxdKaeNNYlaK...O_sA`  
+**Latest Key:** `YOUR_OPENAI_API_KEY_HERE`  
 **Account:** Tier 1 with $6.65 credits  
 **Status:** 🟢 **UPDATED LOCALLY**
 
@@ -10,12 +10,12 @@
 
 **1. config.env:**
 ```bash
-OPENAI_API_KEY=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
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
 ```
 
 **2. grading_config.env:**
 ```bash
-OPENAI_API_KEY="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"
+OPENAI_API_KEY="YOUR_OPENAI_API_KEY_HERE"
 ```
 
 ---
@@ -26,7 +26,7 @@ OPENAI_API_KEY="sk-proj-FpSbLAcWMxdKaeNNYlaKUjv6iC1Mmmf25m9COPRrWQ9gUiyKNHY64wsj
 
 ### **Your Brand New Key (Copy This):**
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 ### **Steps:**
@@ -48,7 +48,7 @@ Find: OPENAI_API_KEY
 Click: The value to edit
 Select all: Ctrl+A
 Delete: Remove old key
-Paste: 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
+Paste: YOUR_OPENAI_API_KEY_HERE
 Press: Enter
 ```
 
@@ -204,7 +204,7 @@ Result:        ✅ ALL AGENTS WORKING!
 # 🔑 **COPY THIS KEY AND UPDATE RAILWAY NOW:**
 
 ```
-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
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Railway:** https://railway.app/dashboard  

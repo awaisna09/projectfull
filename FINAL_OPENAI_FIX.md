@@ -136,7 +136,7 @@ Wait: 10 seconds
 
 **Find your current key:**
 ```
-sk-proj-p-IJ1X103gif...
+YOUR_OPENAI_API_KEY_HERE
 ```
 
 **Click on it to see details:**

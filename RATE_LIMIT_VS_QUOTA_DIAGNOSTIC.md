@@ -59,7 +59,7 @@ Current organization: _______
 
 **For your new key, click it:**
 ```
-Key: sk-proj-p-IJ1X103gif...
+Key: YOUR_OPENAI_API_KEY_HERE
 Organization: _______ (should match above!)
 ```
 
